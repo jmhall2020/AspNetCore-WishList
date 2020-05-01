@@ -8,7 +8,6 @@ namespace WishList.Models
 {
     public class Item
     {
-
         public int Id;
 
         [Required, MaxLength(50)]
