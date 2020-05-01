@@ -1,4 +1,4 @@
-﻿@model WishList.Models.Item
+﻿@model List<WishList.Models.Item>
 
 @{
     ViewData["Title"] = "Index";
@@ -9,11 +9,8 @@
 <a asp-action="create">Add Item</a>
 
 <ul>
-    @foreach (var Item in Model)
+    @foreach (var item in Model)
     {
-    <li>
-        @Html.DisplayFor(modelItem => Item.Description)
-        <a asp-action="Delete" asp-route-id="Id">Delete</a>
-    </li>
+        <li>@item.Description <a asp-action="delete" asp-route-id="@item.Id">delete</a></li>
     }
 </ul>
