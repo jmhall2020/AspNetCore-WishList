@@ -1,0 +1,19 @@
+﻿@model IEnumerable<WishList.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Wishlist</h1>
+
+<a asp-action="Create">Add Item</a>
+
+<ul>
+    @foreach (var item in Model)
+    {
+    <li>
+        @Html.DisplayFor(modelItem => item.Description)
+        <a asp-action="Delete" asp-route-id="Id">Delete</a>
+    </li>
+    }
+</ul>
